@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories on Example Site</title>
-        <link>http://localhost:1313/categories/</link>
-        <description>Recent content in Categories on Example Site</description>
+        <title>Categories on Ploycrystal Blog</title>
+        <link>https://ploycrystal.github.io/categories/</link>
+        <description>Recent content in Categories on Ploycrystal Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Syntax</title>
-        <link>http://localhost:1313/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+        <language>zh-cn</language>
+        <copyright>Ploycrystal</copyright>
+        <lastBuildDate>Fri, 13 Dec 2024 15:23:03 +0800</lastBuildDate><atom:link href="https://ploycrystal.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OSCP</title>
+        <link>https://ploycrystal.github.io/categories/oscp/</link>
+        <pubDate>Fri, 13 Dec 2024 15:23:03 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/syntax/</guid>
+        <guid>https://ploycrystal.github.io/categories/oscp/</guid>
         <description></description>
         </item>
         <item>
-        <title>Themes</title>
-        <link>http://localhost:1313/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+        <title>VulnHub</title>
+        <link>https://ploycrystal.github.io/categories/vulnhub/</link>
+        <pubDate>Fri, 13 Dec 2024 15:23:03 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/themes/</guid>
+        <guid>https://ploycrystal.github.io/categories/vulnhub/</guid>
         <description></description>
         </item>
         <item>
-        <title>Test</title>
-        <link>http://localhost:1313/categories/test/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+        <title>靶机</title>
+        <link>https://ploycrystal.github.io/categories/%E9%9D%B6%E6%9C%BA/</link>
+        <pubDate>Fri, 13 Dec 2024 15:23:03 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/test/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>https://ploycrystal.github.io/categories/%E9%9D%B6%E6%9C%BA/</guid>
+        <description></description>
         </item>
         <item>
-        <title>Test With Whitespaces</title>
-        <link>http://localhost:1313/categories/test-with-whitespaces/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+        <title>HTB</title>
+        <link>https://ploycrystal.github.io/categories/htb/</link>
+        <pubDate>Fri, 13 Dec 2024 14:31:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/test-with-whitespaces/</guid>
+        <guid>https://ploycrystal.github.io/categories/htb/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>计划表</title>
+        <link>https://ploycrystal.github.io/categories/%E8%AE%A1%E5%88%92%E8%A1%A8/</link>
+        <pubDate>Fri, 13 Dec 2024 14:31:33 +0800</pubDate>
+        
+        <guid>https://ploycrystal.github.io/categories/%E8%AE%A1%E5%88%92%E8%A1%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>分类</title>
+        <link>https://ploycrystal.github.io/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://ploycrystal.github.io/categories/test/</guid>
+        <description>&lt;img src="https://ploycrystal.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 分类" /&gt;</description>
         </item>
         
     </channel>

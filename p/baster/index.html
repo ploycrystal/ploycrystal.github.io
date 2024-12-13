@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Sample article showcasing basic">
+<title>Baster</title>
+
+<link rel='canonical' href='http://localhost:1313/p/baster/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Baster">
+<meta property='og:description' content="Sample article showcasing basic">
+<meta property='og:url' content='http://localhost:1313/p/baster/'>
+<meta property='og:site_name' content='Ploycrystal Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='HTB' /><meta property='article:tag' content='靶机' /><meta property='article:published_time' content='2024-12-13T13:05:06&#43;08:00'/><meta property='article:modified_time' content='2024-12-13T13:05:06&#43;08:00'/><meta property='og:image' content='http://localhost:1313/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+<meta name="twitter:title" content="Baster">
+<meta name="twitter:description" content="Sample article showcasing basic"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu6742035045835688415.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👾</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Ploycrystal Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#序章">序章</a></li>
+    <li><a href="#hash破解">hash破解</a></li>
+    <li><a href="#webshell利用">webshell利用</a></li>
+    <li><a href="#session利用">session利用</a></li>
+    <li><a href="#另一searchsploit利用">另一searchsploit利用</a></li>
+    <li><a href="#nishang">nishang</a></li>
+    <li><a href="#另一searchsploit利用-1">另一searchsploit利用</a></li>
+    <li><a href="#提权">提权</a>
+      <ol>
+        <li><a href="#内核提权">内核提权</a></li>
+        <li><a href="#mysql-udf">mysql udf</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/baster/">
+                
+                    <img src="/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" loading="lazy" alt="Featured image of post Baster" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/htb/" >
+                HTB
+            </a>
+        
+            <a href="/categories/%E9%9D%B6%E6%9C%BA/" >
+                靶机
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/baster/">Baster</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Sample article showcasing basic
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-12-13</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="htb-bastard">HTB Bastard
+</h1><h2 id="序章">序章
+</h2><p>Gobuster过多报错，换目录爆破feroxbuster，dirb，dirsearch。</p>
+<p><img src="/assets/image-20231125220505069-1734067445278-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220505069"
+	
+	
+></p>
+<p><img src="/assets/image-20231125220857691.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220857691"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221250045.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221250045"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221521362.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221521362"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221611336.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221611336"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221728076.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221728076"
+	
+	
+></p>
+<h2 id="hash破解">hash破解
+</h2><p><strong><img src="/assets/image-20231125222621563.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222621563"
+	
+	
+></strong></p>
+<p><img src="/assets/image-20231125222849910.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222849910"
+	
+	
+></p>
+<p>太久了打靶机优先级排在后面，渗透测试中可以使用一台专门的机器跑。</p>
+<p><img src="/assets/image-20231125222922019.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222922019"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222941524.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222941524"
+	
+	
+></p>
+<h2 id="webshell利用">webshell利用
+</h2><p>先找个window下的nc，要建立一个smb共享，让靶机能够访问攻击机。在攻击机建立一个smb共享文件share。</p>
+<p><img src="/assets/image-20231125223315848.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223315848"
+	
+	
+></p>
+<p>攻击机建立监听443</p>
+<p><img src="/assets/image-20231125223439260.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223439260"
+	
+	
+></p>
+<p>获取nc然后执行获取反弹shell。</p>
+<p><img src="/assets/image-20231125223524256.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223524256"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223559006.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223559006"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223646010.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223646010"
+	
+	
+></p>
+<h2 id="session利用">session利用
+</h2><p><img src="/assets/image-20231125223747447.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223747447"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223816135.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223816135"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223838472.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223838472"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224025945.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224025945"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224046805.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224046805"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224133262.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224133262"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224142338.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224142338"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224156940.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224156940"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224305637.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224305637"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224425406.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224425406"
+	
+	
+></p>
+<p><img src="/assets/image-20231125214731993.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125214731993"
+	
+	
+></p>
+<h2 id="另一searchsploit利用">另一searchsploit利用
+</h2><p><img src="/assets/image-20231125214936847.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125214936847"
+	
+	
+></p>
+<p><img src="/assets/image-20231125215003855.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125215003855"
+	
+	
+></p>
+<p>当前利用获取的shell无法进行cd目录切换，要进行shell提升。</p>
+<p><img src="/assets/image-20231125215504203.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125215504203"
+	
+	
+></p>
+<h2 id="nishang">nishang
+</h2><p><img src="/assets/image-20231125215900454.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125215900454"
+	
+	
+></p>
+<p><img src="/assets/image-20231125220016442.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220016442"
+	
+	
+></p>
+<p>脚本装入内存后，执行后面的反弹shell逻辑。</p>
+<p><img src="/assets/image-20231125220131773.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220131773"
+	
+	
+></p>
+<p>建立web服务器，iex调用表达式，下载到内存中</p>
+<p><img src="/assets/image-20231125220352495.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220352495"
+	
+	
+></p>
+<h2 id="另一searchsploit利用-1">另一searchsploit利用
+</h2><p>41564进行session劫持后，再使用这个。</p>
+<p><img src="/assets/image-20231125220607147.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125220607147"
+	
+	
+></p>
+<p>github搜一个利用</p>
+<p><img src="/assets/image-20231125221006902.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221006902"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221137332.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221137332"
+	
+	
+></p>
+<h2 id="提权">提权
+</h2><h3 id="内核提权">内核提权
+</h3><p>hotfix无可以尝试内核提权</p>
+<p><img src="/assets/image-20231125221359871.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221359871"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221638921.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221638921"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221806949.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221806949"
+	
+	
+></p>
+<p>可能是权限获取过，重新获取一次会话</p>
+<p><img src="/assets/image-20231125221837370.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221837370"
+	
+	
+></p>
+<p><img src="/assets/image-20231125221909471.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125221909471"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222009509.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222009509"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222017258.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222017258"
+	
+	
+></p>
+<p>c就是clsid</p>
+<p><img src="/assets/image-20231125222235993.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222235993"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222130069.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222130069"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222409908.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222409908"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222500221.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222500221"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222518276.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222518276"
+	
+	
+></p>
+<p><img src="/assets/image-20231125222753239.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125222753239"
+	
+	
+></p>
+<h3 id="mysql-udf">mysql udf
+</h3><p><img src="/assets/image-20231125223415526.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223415526"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223522934.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223522934"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223530827.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223530827"
+	
+	
+></p>
+<p>登录mysql死掉了，做端口转发。</p>
+<p><img src="/assets/image-20231125223654269.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223654269"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223757827.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223757827"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223839606.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223839606"
+	
+	
+></p>
+<p><img src="/assets/image-20231125223906296.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223906296"
+	
+	
+></p>
+<p>远端的3306连接到本地的3306</p>
+<p><img src="/assets/image-20231125223941917.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125223941917"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224000499.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224000499"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224019936.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224019936"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224155513.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224155513"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224211611.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224211611"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224221335.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224221335"
+	
+	
+></p>
+<p><img src="/assets/image-20231125224256433.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125224256433"
+	
+	
+></p>
+<p><img src="/assets/image-20231125214509069.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125214509069"
+	
+	
+></p>
+<p><img src="/assets/image-20231125214614189.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231125214614189"
+	
+	
+></p>
+<p><img src="/assets/PixPin_2023-11-25_21-47-19.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="PixPin_2023-11-25_21-47-19"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/htb/">HTB</a>
+        
+            <a href="/tags/%E9%9D%B6%E6%9C%BA/">靶机</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/test-chinese/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.46f61e8ea6a2df8fc5bf1d24a17c44a6_hu3238087930799200081.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post HTB Bastard"
+                        data-key="test-chinese" 
+                        data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">HTB Bastard</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Ploycrystal
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.ff1446dc94a0e54fad96e80c9e5bd1eb80fdf7aa71545ed212b50f6e47ab809a.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
